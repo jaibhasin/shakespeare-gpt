@@ -20,6 +20,10 @@ This repository contains a minimal transformer-based language model that learns 
    ```bash
    python sample.py
    ```
+   To start generation from your own prompt instead, run:
+   ```bash
+   python custom_prompt.py
+   ```
 
 ## Directory Overview
 
@@ -29,6 +33,7 @@ notebooks/           # Jupyter notebook walkthrough
 shakespeare.txt      # Training data (tiny-shakespeare)
 train.py             # Training script
 sample.py            # Text generation script
+custom_prompt.py     # Prompt-based generation script
 requirements.txt     # Python dependencies
 ```
 
