@@ -57,4 +57,9 @@ for step in range(max_iters):
         print(f"Step {step} | Loss: {loss.item():.4f}")
 
 # ── Save checkpoint ─────────────────────────────────────────
-torch.save(model.state_dict(), "shakespeare.pt")
+import os
+
+pid = os.getpid()
+output_path = f"shakespeare_{pid}.pt"
+torch.save(model.state_dict(), output_path)
+print(f"Model saved to {output_path}")
