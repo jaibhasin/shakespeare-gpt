@@ -39,6 +39,19 @@ python train.py
 - This will save the trained model as `shakespeare.pt`.
 - Training uses default hyperparameters (see `train.py`).
 
+## Training on Your Own Dataset
+You can train this GPT model on **any text dataset**—not just Shakespeare! To do so, simply replace the contents of `shakespeare.txt` with your own text file, or point the code to a different file.
+
+### Interesting Example Datasets
+- **Song Lyrics**: Train on your favorite artist's lyrics to generate new verses.
+- **Movie Scripts**: Feed in scripts from movies or TV shows to generate new scenes or dialogues.
+- **Poetry**: Use collections of poems to create a poetry-generating model.
+- **Programming Code**: Train on code files to generate code snippets or auto-complete functions.
+- **Books or Stories**: Use classic novels, fairy tales, or fan fiction for creative story generation.
+- **Chat Logs**: Use chat or forum logs to create a chatbot with a specific style.
+
+Just make sure your dataset is a plain text file. The model will learn the style, vocabulary, and structure of whatever you provide!
+
 ## Generating Text
 After training, generate new Shakespearean text:
 ```bash
