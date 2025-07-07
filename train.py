@@ -39,11 +39,8 @@ def get_batch(split):
     return x.to(device), y.to(device)
 
 # ── Initialize model ────────────────────────────────────────
-model = BigramLanguageModel(
-    vocab_size, block_size, n_embd, n_head, n_layer, dropout
-).to(device)
-
-optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
+model = BigramLanguageModel(vocab_size, n_embd, n_head, n_layer, block_size).to(device)
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 # ── Training loop ───────────────────────────────────────────
 for step in range(max_iters):
@@ -57,9 +54,5 @@ for step in range(max_iters):
         print(f"Step {step} | Loss: {loss.item():.4f}")
 
 # ── Save checkpoint ─────────────────────────────────────────
-import os
-
-pid = os.getpid()
-output_path = f"shakespeare_{pid}.pt"
-torch.save(model.state_dict(), output_path)
-print(f"Model saved to {output_path}")
+torch.save(model.state_dict(), "shakespeare.pt")
+print("✅ Model saved as shakespeare.pt")
